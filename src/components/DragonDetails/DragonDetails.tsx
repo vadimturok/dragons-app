@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useCallback, useEffect, useState} from 'react';
 import styles from './dragondetails.module.scss'
 import {Dragon} from "../../types/Dragon";
 import PictureSlider from "../PictureSlider/PictureSlider";
@@ -10,12 +10,13 @@ const DragonDetails: FC<{dragon: Dragon}> = ({dragon}) => {
     const [user] = useAuthState(auth)
     const [dragonDoc, setDragonDoc] = useState<Dragon>({} as Dragon)
 
-    const getDragonDoc = async () => {
+    const getDragonDoc = useCallback(async () => {
         const dragonDoc = await getDoc(doc(firestore, `users/${user?.uid}/favorites/${dragon.id}`))
+        console.log('data')
         if(dragonDoc){
             setDragonDoc(dragonDoc.data() as Dragon)
         }
-    }
+    }, [dragon.id, user?.uid])
 
     const addToFavorites = async () => {
         const docRef = doc(firestore, `users/${user?.uid}/favorites/${dragon.id}`)
@@ -31,7 +32,7 @@ const DragonDetails: FC<{dragon: Dragon}> = ({dragon}) => {
 
     useEffect(() => {
         getDragonDoc()
-    }, [])
+    }, [getDragonDoc])
 
     return (
         <div className={styles.wrapper}>
