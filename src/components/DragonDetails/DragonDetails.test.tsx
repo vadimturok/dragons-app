@@ -1,5 +1,5 @@
 import {Dragon} from "../../types/Dragon";
-import {render, screen} from "@testing-library/react";
+import {render, screen, waitFor} from "@testing-library/react";
 import DragonDetails from "./DragonDetails";
 import '@testing-library/jest-dom'
 
@@ -33,7 +33,7 @@ describe('Dragon Details', () => {
          }]
     })
 
-    test('should render dragon info', () => {
+    test('should render dragon info', async () => {
         render(<DragonDetails dragon={dragons[0]}/>)
         const nameElem = screen.getByText(dragons[0].name)
         const wikipediaElem = screen.getByTestId('wiki-link')
@@ -42,11 +42,24 @@ describe('Dragon Details', () => {
         const firstFlight = screen.getByText(`Launch: ${dragons[0].first_flight}`)
         const metersElem = screen.getByText(`Height: ${dragons[0].diameter.meters} m`)
 
-        expect(nameElem).toBeDefined()
-        expect(wikipediaElem).toBeDefined()
-        expect(descriptionElem).toBeDefined()
-        expect(massElem).toBeDefined()
-        expect(firstFlight).toBeDefined()
-        expect(metersElem).toBeDefined()
+        await waitFor(() => {
+            expect(nameElem).toBeDefined()
+        })
+        await waitFor(() => {
+            expect(wikipediaElem).toBeDefined()
+        })
+        await waitFor(() => {
+            expect(descriptionElem).toBeDefined()
+        })
+        await waitFor(() => {
+            expect(massElem).toBeDefined()
+        })
+        await waitFor(() => {
+            expect(firstFlight).toBeDefined()
+        })
+        await waitFor(() => {
+            expect(metersElem).toBeDefined()
+        })
+
     })
 })

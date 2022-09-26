@@ -1,4 +1,4 @@
-import {render, screen} from "@testing-library/react";
+import {render, screen, waitFor} from "@testing-library/react";
 import Header from "./Header";
 import '@testing-library/jest-dom'
 import {MemoryRouter} from "react-router-dom";
@@ -8,7 +8,7 @@ import {Provider} from "react-redux";
 import {store} from '../../store'
 
 describe('Header', () => {
-    test('should navigate to home page', () => {
+    test('should navigate to home page', async () => {
         render(<MemoryRouter>
             <Provider store={store}>
                 <Header/>
@@ -16,6 +16,8 @@ describe('Header', () => {
             </Provider>
         </MemoryRouter>)
         userEvent.click(screen.getByText('Dragons App'))
-        expect(screen.getByRole('progressbar')).toBeInTheDocument()
+        await waitFor(() => {
+            expect(screen.getByRole('progressbar')).toBeInTheDocument()
+        })
     })
 })

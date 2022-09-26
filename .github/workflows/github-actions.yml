@@ -17,4 +17,4 @@ jobs:
       - name: build project
         run: npm run build
       - name: testing
-        run: npm run test --detectOpenHandles
+        run: npm run test
