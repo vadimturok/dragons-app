@@ -1,0 +1,46 @@
+.wrapper{
+  width: 400px;
+  height: 250px;
+  border: 1px solid lightgrey;
+  background-color: white;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media (max-width: 420px) {
+    width: 350px;
+  }
+
+  .inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .title{
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .googleAuth{
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      border: 1px solid lightgrey;
+      padding: 10px;
+      width: 220px;
+      border-radius: 20px;
+      font-size: 17px;
+      gap: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+
+      &:hover{
+        background-color: rgba(0, 112, 243, 0.08);
+        border-color: rgba(0, 112, 243, 0.45);
+      }
+    }
+  }
+}

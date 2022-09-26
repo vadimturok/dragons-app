@@ -1,0 +1,60 @@
+.wrapper{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+
+  .slider{
+    //width: 500px;
+    flex: 1;
+  }
+
+  .dragonInfo{
+    flex: 1;
+
+    .dragonInfoTop{
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 450px) {
+        flex-direction: column;
+        gap: 20px;
+        align-items: start;
+      }
+      .favoritesButton{
+        padding: 0 7px;
+        border: none;
+        border-radius: 20px;
+        font-size: 13px;
+        background-color: dodgerblue;
+        color: white;
+        cursor: pointer;
+        &:hover{
+          background-color: #1c79d5;
+        }
+      }
+    }
+    .dragonDescription{
+      color: gray;
+      margin-top: 10px;
+    }
+    .measures{
+      margin-top: 10px;
+    }
+    .wikiLink{
+      display: block;
+      text-decoration: none;
+      width: max-content;
+      margin-top: 10px;
+      color: dodgerblue;
+      &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}

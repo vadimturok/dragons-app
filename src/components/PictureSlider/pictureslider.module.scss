@@ -1,0 +1,44 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+
+
+  .arrowButtons{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 10px;
+
+    .arrow{
+      background-color: dodgerblue;
+      padding: 0 20px 0 20px;
+      border-radius: 20px;
+      color: white;
+      font-size: 20px;
+      &:hover{
+        cursor: pointer;
+        background-color: #1c79d5;
+      }
+    }
+  }
+  .sliderImage{
+    //height: 300px;
+    //width: 500px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  .dotsWrapper{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .dot{
+      font-size: 30px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}
