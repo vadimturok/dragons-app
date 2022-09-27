@@ -30,6 +30,7 @@
 - Authorization & Authentication via Firebase authentication
 - Adding rockets to user's favorites
 - Removing rockets from user's favorites
+- Mobile responsiveness
 
 
 ## Setup
