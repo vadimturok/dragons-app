@@ -2,9 +2,10 @@ import React, {FC, useCallback, useEffect, useState} from 'react';
 import styles from './dragondetails.module.scss'
 import {Dragon} from "../../types/Dragon";
 import PictureSlider from "../PictureSlider/PictureSlider";
-import { doc, getDoc, setDoc, deleteDoc} from "@firebase/firestore";
+import { doc, getDoc} from "@firebase/firestore";
 import {auth, firestore} from "../../firebaseconfig";
 import {useAuthState} from "react-firebase-hooks/auth";
+import {addDragon, removeDragon} from "../../utils/DragonActions";
 
 const DragonDetails: FC<{dragon: Dragon}> = ({dragon}) => {
     const [user] = useAuthState(auth)
@@ -18,14 +19,12 @@ const DragonDetails: FC<{dragon: Dragon}> = ({dragon}) => {
     }, [dragon.id, user?.uid])
 
     const addToFavorites = async () => {
-        const docRef = doc(firestore, `users/${user?.uid}/favorites/${dragon.id}`)
-        await setDoc(docRef, dragon)
+        await addDragon(dragon, user?.uid!)
         setDragonDoc(dragon)
     }
 
     const removeFromFavorites = async () => {
-        const docRef = doc(firestore, `users/${user?.uid}/favorites/${dragon.id}`)
-        await deleteDoc(docRef)
+        await removeDragon(dragon.id, user?.uid!)
         setDragonDoc({} as Dragon)
     }
 
