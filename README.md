@@ -30,10 +30,11 @@
 - Authorization & Authentication via Firebase authentication
 - Adding rockets to user's favorites
 - Removing rockets from user's favorites
+- Mobile responsiveness
 
 
 ## Setup
-To run application locally create in the 'src' folder file 'firebaseconfig.js' and provide configuration object:
+To run application locally create in the root folder '.env' file and provide key-value pairs. Add all values from '.env' file into the 'firebaseconfig.js' file:
 
 ```
 const firebaseConfig = {
