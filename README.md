@@ -44,10 +44,6 @@ const firebaseConfig = {
     messagingSenderId: "<your messaging sender id>",
     appId: "<your app id>"
 };
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app)
-const firestore = getFirestore(app)
 ```
 
 Install all dependencies:
