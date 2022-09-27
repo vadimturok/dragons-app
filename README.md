@@ -33,7 +33,7 @@
 
 
 ## Setup
-To run application locally create in the root folder '.env' file and provide key-value pairs. Add all values from '.env' file into the 'firebaseconfig.js' file:
+To run application locally create in the root folder '.env' file and provide key-value pairs. Add all keys from '.env' file into the 'firebaseconfig.js' file:
 
 ```
 const firebaseConfig = {
