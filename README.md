@@ -16,7 +16,6 @@
 
 ## Technologies Used
 - React - version 18.2.0
-- Moment - version 2.29.3
 - Redux Toolkit - version 1.8.5
 - TypeScript - version 4.8.3
 - SCSS - version 0.2.4
