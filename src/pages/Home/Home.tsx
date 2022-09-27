@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import styles from './home.module.scss'
-import { useAppSelector} from "../../hooks";
+import {useAppSelector} from "../../hooks";
 import DragonDetails from "../../components/DragonDetails/DragonDetails";
 import DragonsList from "../../components/DragonsList/DragonsList";
 import {Dragon} from "../../types/Dragon";

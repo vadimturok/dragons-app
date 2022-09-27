@@ -13,7 +13,6 @@ const Profile = () => {
     const query = collection(firestore, `users/${user?.uid}/favorites`)
     const [docs, loading] = useCollectionData(query)
 
-
     const removeFromFavorites = async (dragonId: string) => {
         const docRef = doc(firestore, `users/${user?.uid}/favorites/${dragonId}`)
         await deleteDoc(docRef)

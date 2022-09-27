@@ -12,7 +12,6 @@ const DragonDetails: FC<{dragon: Dragon}> = ({dragon}) => {
 
     const getDragonDoc = useCallback(async () => {
         const dragonDoc = await getDoc(doc(firestore, `users/${user?.uid}/favorites/${dragon.id}`))
-        console.log('data')
         if(dragonDoc){
             setDragonDoc(dragonDoc.data() as Dragon)
         }
@@ -59,4 +58,4 @@ const DragonDetails: FC<{dragon: Dragon}> = ({dragon}) => {
     );
 };
 
-export default DragonDetails;
+export default React.memo(DragonDetails);
