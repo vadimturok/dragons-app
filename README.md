@@ -33,7 +33,7 @@
 
 
 ## Setup
-To run application locally create in the root folder '.env' file and provide key-value pairs. Add all values from '.env' file into the 'firebaseconfig.js' file:
+To run application locally create in the root folder '.env' file and provide key-value pairs. Add all keys from '.env' file into the 'firebaseconfig.js' file:
 
 ```
 const firebaseConfig = {
@@ -44,10 +44,6 @@ const firebaseConfig = {
     messagingSenderId: "<your messaging sender id>",
     appId: "<your app id>"
 };
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app)
-const firestore = getFirestore(app)
 ```
 
 Install all dependencies:
