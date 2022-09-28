@@ -2,6 +2,8 @@ import {render, screen} from "@testing-library/react";
 import DragonsList from "./DragonsList";
 import {Dragon} from "../../types/Dragon";
 import '@testing-library/jest-dom'
+import {Provider} from "react-redux";
+import {store} from '../../store'
 
 describe('Dragons List', () => {
     let dragons: Dragon[]
@@ -23,7 +25,11 @@ describe('Dragons List', () => {
     test('should display dragons list', () => {
         const mockFn = jest.fn()
         mockFn.mockImplementation((dragon: Dragon) => {})
-        render(<DragonsList dragons={dragons} setDisplayDragon={mockFn}/>)
+        render(
+            <Provider store={store}>
+                <DragonsList dragons={dragons} setDisplayDragon={mockFn}/>
+            </Provider>
+        )
 
         expect(screen.getByText(dragons[0].name)).toBeInTheDocument()
     })
