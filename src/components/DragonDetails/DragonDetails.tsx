@@ -3,7 +3,7 @@ import styles from './dragondetails.module.scss'
 import {Dragon} from "../../types/Dragon";
 import PictureSlider from "../PictureSlider/PictureSlider";
 import { doc, getDoc} from "@firebase/firestore";
-import {auth, firestore} from "../../firebaseconfig";
+import {auth, firestore} from "../../firebase/firebaseconfig";
 import {useAuthState} from "react-firebase-hooks/auth";
 import {addDragon, removeDragon} from "../../utils/DragonActions";
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './header.module.scss'
 import {useAuthState} from "react-firebase-hooks/auth";
-import {auth} from "../../firebaseconfig";
+import {auth} from "../../firebase/firebaseconfig";
 import {signOut} from 'firebase/auth'
 import {useNavigate} from "react-router-dom";
 

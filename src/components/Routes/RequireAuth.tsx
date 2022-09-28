@@ -1,6 +1,6 @@
 import React from 'react';
 import {useAuthState} from "react-firebase-hooks/auth";
-import {auth} from "../../firebaseconfig";
+import {auth} from "../../firebase/firebaseconfig";
 import {Outlet, Navigate} from "react-router-dom";
 
 const RequireAuth = () => {

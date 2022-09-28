@@ -2,7 +2,7 @@ import React, {FC, useEffect} from 'react';
 import styles from './login.module.scss'
 import googleIcon from '../../assets/googleLogo.png'
 import {useAuthState, useSignInWithGoogle} from "react-firebase-hooks/auth";
-import {auth, firestore} from '../../firebaseconfig'
+import {auth, firestore} from '../../firebase/firebaseconfig'
 import {doc, getDoc, setDoc} from "@firebase/firestore";
 import {useNavigate} from "react-router-dom";
 import {User} from '@firebase/auth'

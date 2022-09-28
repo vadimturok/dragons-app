@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './profile.module.scss'
 import {useAuthState} from "react-firebase-hooks/auth";
-import {auth, firestore} from "../../firebaseconfig";
+import {auth, firestore} from "../../firebase/firebaseconfig";
 import Loader from "../../components/Loader/Loader";
 import {collection} from "@firebase/firestore";
 import {useCollectionData} from "react-firebase-hooks/firestore";
